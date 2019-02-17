@@ -1,12 +1,12 @@
 {
   "version": "dev-prod",
   "require": {
-    "omeratagun/phpeasyslack" : "1.*"
+    "omeratagun/phpeasyslack" : "1.0.*"
   },
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/tyraelll/phpeasyslack"
+      "url": "https://github.com/tyraelll/phpeasyslack/commit/b418c26b964400cac2bb832e36260ec5984353ae"
     }
   ],
   "minimum-stability": "dev",
