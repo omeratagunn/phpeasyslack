@@ -1,2 +1,2 @@
-# phpeasyslack
-Trait for slack webhook integration
+# Slackforall
+Need to be filled.
