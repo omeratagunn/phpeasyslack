@@ -1,0 +1,21 @@
+{
+  "version" : "1",
+  "name": "omeratagun/slackforall",
+  "description": "Easy usage of slack notifications via bash in your server.",
+  "type": "package",
+  "license": "MIT",
+  "keywords": ["slack notifications","slack","easy slack notifications", "trait for slack"],
+  "homepage": "https://github.com/tyraelll/slackforall",
+  "authors": [
+    {
+      "name": "tyraelll",
+      "email": "omratagn@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "slackforall\\": "src/"
+    }
+  }
+
+}
