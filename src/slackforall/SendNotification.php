@@ -3,10 +3,17 @@ namespace Slackforall;
 
 trait SendNotification
 {
-    private static $params;
+    private static $params =
+        [
+            'TEXT' => null,
+            'CHANNEL' => null,
+            'DATE' => null
+        ];
+
 
     private static $env;
 
+    private static $error = array();
     /**
      * @return int
      * To detect your operating system and do the job based on it.
@@ -17,6 +24,14 @@ trait SendNotification
 
         if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
 
+            if(!extension_loaded('curl')){
+
+                self::$error[ 'message' ] = 'Curl extension must be enabled';
+
+                self::$error[ 'status' ] = 1;
+
+            }
+
             return self::$env = 1;
         }
 
@@ -25,6 +40,34 @@ trait SendNotification
             return self::$env = 0;
 
         }
+
+
+    }
+
+    /**
+     * @param string $webhook
+     */
+    protected static function checkLink(string $webhook){
+
+        $data = explode("/",$webhook);
+
+        if(count($data) != 7){
+
+            self::$error[ 'message' ] = "This is not a valid slack webhook link";
+            self::$error[ 'status' ] = 1;
+
+        }
+        if($data[0] != "https:"){
+
+            self::$error[ 'message' ] = "Check the link you had entered";
+            self::$error[ 'status' ] = 1;
+        }
+        if($data[2] != "hooks.slack.com"){
+
+            self::$error[ 'message' ] = "Link must be hooks.slack.com";
+            self::$error[ 'status' ] = 1;
+        }
+
     }
     /**
      * @param $text
@@ -38,11 +81,20 @@ trait SendNotification
 
         self::$params['CHANNEL'] = $webhook;
 
+        self::checkLink($webhook);
+
+        if(!empty(self::$error)){
+
+            return self::$error;
+
+        }
+
         if($adddate === true) {
 
             self::$params['DATE'] = ' - '.date("Y-m-d G:i");
 
         }
+
         self::setup();
 
         if(self::$env == 0) {
@@ -56,13 +108,13 @@ trait SendNotification
             }
             catch (\Exception $e){
 
-                return $e;
+                return $e->getMessage();
 
             }
         }
 
         else
-            {
+        {
 
             try {
 
@@ -89,7 +141,7 @@ trait SendNotification
             catch (\Exception $e)
             {
 
-                return $e;
+                return $e->getMessage();
 
             }
         }
