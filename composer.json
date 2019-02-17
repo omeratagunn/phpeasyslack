@@ -1,7 +1,7 @@
 {
   "version" : "1",
   "name": "omeratagun/phpeasyslack",
-  "description": "Easy usage of slack notifications via bash in your server.",
+  "description": "Easy usage of slack notifications win or linux",
   "type": "package",
   "license": "MIT",
   "keywords": ["slack notifications","slack","easy slack notifications", "trait for slack"],
