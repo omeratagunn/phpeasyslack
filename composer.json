@@ -1,5 +1,5 @@
 {
-  "version": "dev-master",
+  "version": "dev-prod",
   "require": {
     "omeratagun/phpeasyslack" : "1.*"
   },
