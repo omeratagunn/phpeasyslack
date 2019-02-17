@@ -1,8 +1,14 @@
 {
   "version": "dev-master",
   "require": {
-    "omeratagun/phpeasyslack" : "1.0.1-prod"
+    "omeratagun/phpeasyslack" : "1.*"
   },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/tyraelll/phpeasyslack"
+    }
+  ],
   "minimum-stability": "dev",
   "name": "omeratagun/phpeasyslack",
   "description": "Easy usage of slack notifications win or linux",
