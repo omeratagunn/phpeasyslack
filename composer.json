@@ -1,6 +1,6 @@
 {
   "version" : "1",
-  "name": "omeratagun/slackforall",
+  "name": "omeratagun/phpeasyslack",
   "description": "Easy usage of slack notifications via bash in your server.",
   "type": "package",
   "license": "MIT",
