@@ -1,7 +1,7 @@
 {
   "version": "dev-prod",
   "require": {
-    "omeratagun/phpeasyslack" : "1.0.*"
+    "omeratagun/phpeasyslack" : "dev-prod as 1.0.1"
   },
   "repositories": [
     {
