@@ -1,5 +1,8 @@
 {
-  "version" : "1",
+  "version": "dev-master",
+  "require": {
+    "omeratagun/phpeasyslack" : "dev-prod 1.0.1"
+  },
   "name": "omeratagun/phpeasyslack",
   "description": "Easy usage of slack notifications win or linux",
   "type": "package",
