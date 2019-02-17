@@ -1,7 +1,6 @@
 {
   "version": "1.0.1",
   "require": {
-    "omeratagun/phpeasyslack" : "1.0.1",
     "php": ">=5.3.3"
   },
   "minimum-stability": "dev",
