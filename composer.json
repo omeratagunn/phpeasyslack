@@ -1,9 +1,9 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.2",
   "require": {
     "php": ">=5.3.3"
   },
-  "minimum-stability": "dev",
+  "minimum-stability": "stable",
   "name": "omeratagun/phpeasyslack",
   "description": "Easy usage of slack notifications win or linux",
   "type": "package",
