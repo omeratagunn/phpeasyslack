@@ -83,6 +83,8 @@ trait SendNotification
 
         self::checkLink($webhook);
 
+        self::setup();
+
         if(!empty(self::$error)){
 
             return self::$error;
@@ -94,8 +96,6 @@ trait SendNotification
             self::$params['DATE'] = ' - '.date("Y-m-d G:i");
 
         }
-
-        self::setup();
 
         if(self::$env == 0) {
 
